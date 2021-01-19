@@ -808,10 +808,10 @@ export interface TileLayerOptions extends GridLayerOptions {
 export class TileLayer extends GridLayer {
     constructor(urlTemplate: string, options?: TileLayerOptions);
     setUrl(url: string, noRedraw?: boolean): this;
-    getTileUrl(coords: L.Coords): string;
+    getTileUrl(coords: Coords): string;
 
-    protected _tileOnLoad(done: L.DoneCallback, tile: HTMLElement): void;
-    protected _tileOnError(done: L.DoneCallback, tile: HTMLElement, e: Error): void;
+    protected _tileOnLoad(done: DoneCallback, tile: HTMLElement): void;
+    protected _tileOnError(done: DoneCallback, tile: HTMLElement, e: Error): void;
     protected _abortLoading(): void;
     protected _getZoomForUrl(): number;
 
@@ -1800,7 +1800,7 @@ export class Map extends Evented {
     stopLocate(): this;
 
     // Properties
-    attributionControl: L.Control.Attribution;
+    attributionControl: Control.Attribution;
     boxZoom: Handler;
     doubleClickZoom: Handler;
     dragging: Handler;
